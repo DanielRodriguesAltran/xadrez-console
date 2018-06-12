@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using xadrez_console.tabuleiro;
+using xadrez_console.xadrez;
 
 namespace xadrez_console
 {
@@ -12,12 +13,13 @@ namespace xadrez_console
         static void Main(string[] args)
         {
             Tabuleiro tabuleiro = new Tabuleiro(8, 8);
-            Posicao p;
+            tabuleiro.colocarPeca(new Torre(tabuleiro,Cor.Preto), new Posicao(0, 0));
+            tabuleiro.colocarPeca(new Torre(tabuleiro, Cor.Preto), new Posicao(0, 7));
+            tabuleiro.colocarPeca(new Rei(tabuleiro, Cor.Preto), new Posicao(2, 4));
 
-            p = new Posicao(3, 4);
+            Tela.imprimirTabuleiro(tabuleiro);
 
-            Console.WriteLine("Posicao"+p);
-
+            Console.ReadLine();
         }
     }
 }
