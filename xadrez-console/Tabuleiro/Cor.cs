@@ -9,7 +9,7 @@ namespace xadrez_console.tabuleiro
     enum Cor
     {
         Branco,
-        Verde,
+        Vermelho,
         Preto
     }
 }
