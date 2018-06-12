@@ -22,7 +22,8 @@ namespace xadrez_console.tabuleiro
         public Peca peca(int linha,int coluna)
         {
             return pecas[linha, coluna];
-        }public Peca peca(Posicao posicao)
+        }
+        public Peca peca(Posicao posicao)
         {
             return pecas[posicao.linha, posicao.coluna];
         }
@@ -39,7 +40,7 @@ namespace xadrez_console.tabuleiro
                 throw new TabuleiroException("Já existe uma peça nessa posicao");
             }
             pecas[pos.linha, pos.coluna] = p;
-            p.p = pos;
+            p.posicao = pos;
         }
 
         public Peca retirarPeca(Posicao posicao)
@@ -49,7 +50,7 @@ namespace xadrez_console.tabuleiro
                 return null;
             }
             Peca aux = peca(posicao);
-            aux.p = null;
+            aux.posicao = null;
             pecas[posicao.linha, posicao.coluna]=null;
             return aux;
         }

@@ -9,6 +9,7 @@ namespace xadrez_console.xadrez
 {
     class PosicaoXadrez
     {
+
         public char coluna { get; set; }
         public int linha { get; set; }
 
@@ -25,7 +26,7 @@ namespace xadrez_console.xadrez
 
         public override string ToString()
         {
-            return ""+coluna+linha;
+            return "" + coluna + linha;
         }
     }
 }
