@@ -12,12 +12,19 @@ namespace xadrez_console
     {
         static void Main(string[] args)
         {
+            try
+            {
             Tabuleiro tabuleiro = new Tabuleiro(8, 8);
             tabuleiro.colocarPeca(new Torre(tabuleiro,Cor.Preto), new Posicao(0, 0));
             tabuleiro.colocarPeca(new Torre(tabuleiro, Cor.Preto), new Posicao(0, 7));
             tabuleiro.colocarPeca(new Rei(tabuleiro, Cor.Preto), new Posicao(2, 4));
 
             Tela.imprimirTabuleiro(tabuleiro);
+            }catch(TabuleiroException e)
+            {
+                Console.WriteLine(e.Message);
+            }
+            
 
             Console.ReadLine();
         }
